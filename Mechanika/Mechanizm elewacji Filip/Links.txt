@@ -1,4 +1,4 @@
-http://www.mitcalc.com/doc/gear4/help/en/gear4.htm
+﻿http://www.mitcalc.com/doc/gear4/help/en/gear4.htm
 
 http://www.otvinta.com/rack.html
 
@@ -8,6 +8,8 @@ https://www.engineersedge.com/gears/worm_gear_formula_table_13534.htm
 
 https://www.engineersedge.com/gears/worm_and_wormgear_design_13813.htm
 
-https://en.wikipedia.org/wiki/Worm_drive
+https://en.wikipedia.org/wiki/Worm_drive - ślimak i zębatka ślimakowa
 
-https://www.youtube.com/watch?v=pTLBtd6kPm8
+https://www.youtube.com/watch?v=pTLBtd6kPm8 - projektowanie ślimaka w Inventorze
+
+https://en.wikipedia.org/wiki/Slider-crank_linkage - mechanizm korbowy
