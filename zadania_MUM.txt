@@ -1,7 +1,7 @@
 ﻿dodanie krancowek na DEK i RET
 
-dodanie enkodowania pozycji elewacji - krancowka na koncu polkola elewacji
-
-czy ekran lcd mozna - raczej nie ma co
-
 kontrola teleskopu przez bluetooth z telefonu albo komputera - bluetooth electronics
+
+sprawdzenie kontrolera silników - i poprawności obliczeń!
+
+dodanie oznaczeń kątowych na półkolu elewacji
