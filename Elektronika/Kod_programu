@@ -1,0 +1,126 @@
+// Do sterowników silnika
+#include "DualTB9051FTGMotorShield.h"  
+DualTB9051FTGMotorShield md;
+// Definicja PINÓW do silników jest nie potrzebna. Trzeba po³aczyæ tak jak na schemacie od producenta.
+
+// Do GPSa
+#include <SoftwareSerial.h>
+#include "DEV_Config.h"
+#include "L76X.h"
+GNRMC GPS1;
+//Tutaj te¿ nie trzeba definiowaæ dodatkowych pinów . Wykorzystuje piny RX i TX.
+
+// Do odczytu danych z Bluetootha
+#include <SoftwareSerial.h>
+#define rxPin 10
+#define txPin 12
+#define baudrate 38400
+String msg;
+SoftwareSerial hc05(rxPin ,txPin);
+
+//Do obliczen matematycznych
+#include <math.h>
+
+int PolarAxisPin = A3;   //piny do krañcówek
+int DeclinationAxisPin = A4;
+int PrawdziweZeroEnkoderaM1 = 0;
+int PrawdziweZeroEnkoderaM2 = 0;
+
+
+int ImpulsyNaObrot = 48*2.5; // iloœæ impulsów na jeden obrót ca³ej osi urzadzenia
+int PolarisDeklinacja = 89.26411;  //w stopniach
+int PolarisRaktascensja = 2.53; // w godzinach
+int GMT_time = 0; // w godzinach; Czas Greenwich
+int Motor2speed = 12; //RPM; maksymalna prêdkoœæ u¿ytego silnika
+int Motor2const = 400/(Motor2speed/2.5)*60*24; // [-]; Sta³a prekoœæ silnika od osi raktascensji do nad¹¿nego œledzenia nieba
+int WyborSilnika = 0; 
+
+int hour = 0;
+int minute = 0;
+int second = 0;
+int temp = 0;
+
+//Zalozenie - silnik 1 jest do osi deklinacji, a silnik 2 do osi biegunowej
+// Stosujemy enkodery inkrementalny
+void setup() {
+ md.init(); //inicjalizacja sterownika do silników
+ 
+  pinMode(rxPin,INPUT);
+  pinMode(txPin,OUTPUT);
+ 
+ Serial.begin(9600);  //do wysylania wiadomosci przez bluetootha do aplikacji
+}
+
+void loop() {
+  md.enableDrivers(); //za³adowywanie sterowników silników
+  delay(1); // wait for drivers to be enabled so fault pins are no longer low
+  zerowanie_pozycji() ; //zerowanie teleskopu i enkoderow, w celu odnalezienia swojej pozycji
+
+	  
+  while ( ImpulsyNaObrot*PolarisDeklinacja/360 >= readM1Encoder() - PrawdziweZeroEnkoderaM1 ){   // gdy dojedzie to stanie na gwiezdzie polarnej
+  void setM1Speed(400);
+  }
+  void setM1Speed(0) ; //ustwiona os deklinacji
+  
+  GPS1 = L76X_Gat_GNRMC();
+  GMT_time = GPS1.Time_H - 2 + (GPS1.Time_M + GPS1.Time_S/60)/60; //czas Greenwich //-2 dla naszej strefy czasowej
+  
+  while( readM2Encoder() - PrawdziweZeroEnkoderaM2 - 1 <= ImpulsyNaObrot*(GMT_time + GPS.Lon - PolarisRaktascensja)/24 <= readM2Encoder() - PrawdziweZeroEnkoderaM2 + 1){ 
+  //Gdy znajdziejmy siê wide³kach, zatrzymaj siê
+  void setM2Speed(400);
+  GPS1 = L76X_Gat_GNRMC();
+  GMT_time = GPS1.Time_H + (GPS1.Time_M + GPS1.Time_S/60)/60;
+  }
+  void setM2Speed(0+Motor2const);  //ustawienie osi biegunowej i nad¹¿ne pod¹¿anie
+	
+	while(1){ //Wlasciwy nieskonczony program
+	// Sterowanie silnikami
+    if(BluetoothData=='0') {
+		void setM1Speed(0);
+		void setM2Speed(Motor2const);
+	} // Stop
+    if(BluetoothData=='1') {
+		void setM1Speed(400);
+	} //Do gory
+    if(BluetoothData=='3') {
+		void setM1Speed(-400);
+	} //Do dolu
+    if(BluetoothData=='2') {
+		void setM2Speed(400);
+	} //Do gory
+    if(BluetoothData=='4') {
+		void setM2Speed(-400);
+	} //Do dolu
+	
+	// Wyswietlenie danych w aplikacji
+	Serial.print("*T"+String(GPS1.Time_H)+String(':')+String(GPS1.Time_M)+String(':')+String(GPS1.Time_S)+"*"); //Wyswietl czas
+	Serial.print("*D"+String(GPS1.Lon)+"*");
+	Serial.print("*S"+String(GPS1.Lan)+"*");
+	Serial.print("*E"+String(ImpulsyNaObrot*(readM1Encoder() - PrawdziweZeroEnkoderaM1))+String('st')+"*");
+	
+	//Przeliczenie raktascensji na format zapisu godzinowego
+	GPS1 = L76X_Gat_GNRMC();
+	temp = GMT_time + GPS.Lon - PolarisRaktascensja)/24;
+	hour = floor(GMT_time);
+	minute = floor((hour-GMT_time)*60);
+	second = minute - (hour-GMT_time)*60;
+	
+	Serial.print("*R"+String(hour)+String('h ')+String(minute)+String('m ')+String(second)+String('s')"*");
+	}
+}
+
+void zerowanie_pozycji()
+{
+while ( 4.8 >= analogRead(DeclinationAxisPin) ){   // gdy dojedzie do krañcówki to stanie
+void setM1Speed(-400) 
+}
+void setM1Speed(0)
+
+while ( 4.8 >= analogRead(PolarAxisPin) ){   // gdy dojedzie do krañcówki to stanie
+void setM2Speed(400) 
+}
+void setM2Speed(0)
+
+PrawdziweZeroEnkoderaM1 = readM1Encoder();  //Zresestowanie enkodera
+PrawdziweZeroEnkoderaM2 = readM2Encoder();  //Zresestowanie enkodera
+}
