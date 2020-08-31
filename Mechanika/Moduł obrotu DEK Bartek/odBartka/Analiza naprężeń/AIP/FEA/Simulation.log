@@ -1,0 +1,24 @@
+﻿Badanie Analiza statyczna:1 rozpoczęte: 31.08.2020, 21:00:23
+Liczba konfiguracji: 1
+Siatka domyślna: Elementy 15581, Węzły 25451
+Badanie        Worst Jacobian ratio :  1  on element 1 zakończone: 31.08.2020, 21:00:28
+Czas całkowity 0:00:05
+
+Badanie Analiza statyczna:1 rozpoczęte: 31.08.2020, 21:01:32
+Liczba konfiguracji: 1
+Siatka domyślna: Elementy 15581, Węzły 25451
+Czas rozwiązania 3s
+Wskaźnik zbieżności: 50%
+Osiągnięto całkowitą liczbę wygładzeń h 
+Badanie Analiza statyczna:1 zakończone: 31.08.2020, 21:01:37
+Czas całkowity 0:00:05
+
+Badanie Analiza statyczna:1 rozpoczęte: 31.08.2020, 21:04:13
+Liczba konfiguracji: 1
+Siatka domyślna: Elementy 15873, Węzły 25898
+Czas rozwiązania 2s
+Wskaźnik zbieżności: 50%
+Osiągnięto całkowitą liczbę wygładzeń h 
+Badanie Analiza statyczna:1 zakończone: 31.08.2020, 21:04:16
+Czas całkowity 0:00:03
+
