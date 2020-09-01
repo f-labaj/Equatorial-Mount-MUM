@@ -1,24 +1,36 @@
-﻿Badanie Analiza statyczna:1 rozpoczęte: 31.08.2020, 21:00:23
+﻿Badanie Analiza statyczna:1 rozpoczęte: 02.09.2020, 01:01:36
 Liczba konfiguracji: 1
-Siatka domyślna: Elementy 15581, Węzły 25451
-Badanie        Worst Jacobian ratio :  1  on element 1 zakończone: 31.08.2020, 21:00:28
-Czas całkowity 0:00:05
-
-Badanie Analiza statyczna:1 rozpoczęte: 31.08.2020, 21:01:32
-Liczba konfiguracji: 1
-Siatka domyślna: Elementy 15581, Węzły 25451
-Czas rozwiązania 3s
+Siatka domyślna: Elementy 93323, Węzły 137919
+Czas rozwiązania 14s
 Wskaźnik zbieżności: 50%
 Osiągnięto całkowitą liczbę wygładzeń h 
-Badanie Analiza statyczna:1 zakończone: 31.08.2020, 21:01:37
-Czas całkowity 0:00:05
+Badanie Analiza statyczna:1 zakończone: 02.09.2020, 01:01:58
+Czas całkowity 0:00:22
 
-Badanie Analiza statyczna:1 rozpoczęte: 31.08.2020, 21:04:13
+Badanie Analiza statyczna:1 rozpoczęte: 02.09.2020, 01:07:05
 Liczba konfiguracji: 1
-Siatka domyślna: Elementy 15873, Węzły 25898
-Czas rozwiązania 2s
+Siatka domyślna: Elementy 93364, Węzły 138033
+Czas rozwiązania 14s
 Wskaźnik zbieżności: 50%
 Osiągnięto całkowitą liczbę wygładzeń h 
-Badanie Analiza statyczna:1 zakończone: 31.08.2020, 21:04:16
-Czas całkowity 0:00:03
+Badanie Analiza statyczna:1 zakończone: 02.09.2020, 01:07:22
+Czas całkowity 0:00:17
+
+Badanie Analiza statyczna:1 rozpoczęte: 02.09.2020, 01:08:12
+Liczba konfiguracji: 1
+Siatka domyślna: Elementy 93364, Węzły 138033
+Czas rozwiązania 15s
+Wskaźnik zbieżności: 50%
+Osiągnięto całkowitą liczbę wygładzeń h 
+Badanie Analiza statyczna:1 zakończone: 02.09.2020, 01:08:29
+Czas całkowity 0:00:17
+
+Badanie Analiza statyczna:1 rozpoczęte: 02.09.2020, 01:09:50
+Liczba konfiguracji: 1
+Siatka domyślna: Elementy 93323, Węzły 137919
+Czas rozwiązania 15s
+Wskaźnik zbieżności: 50%
+Osiągnięto całkowitą liczbę wygładzeń h 
+Badanie        Worst Jacobian ratio :  1  on element 1 zakończone: 02.09.2020, 01:10:22
+Czas całkowity 0:00:32
 
