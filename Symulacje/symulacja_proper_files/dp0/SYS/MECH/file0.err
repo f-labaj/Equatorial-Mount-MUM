@@ -1,0 +1,12 @@
+/COM,ANSYS RELEASE 2020 R1           BUILD 20.1      UP20191203       23:35:18
+
+ *** WARNING ***                         CP =       0.811   TIME= 23:35:19
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** WARNING ***                         CP =       1.778   TIME= 23:35:20
+ Too many nodes 5094 are included in the force-distributed-surface       
+ constraint identified by real constant set 18.  This may greatly        
+ affect solver performance due to large wave fronts and memory           
+ consumption.  Also check results carefully and consider solving with a  
+ different unit system.                                                  
