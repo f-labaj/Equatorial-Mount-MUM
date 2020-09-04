@@ -1,0 +1,20 @@
+﻿fringing na plaskich detektorach, kontrowany AR
+
+podloze klinowe pod filtr -> zapobieganie fringingowi
+
+sam filtr (warstwa) moze wprowadzac fringing
+
+fringing wprowadza szum
+
+ocena jakiego okresu fringingu mozna sie spodziewac
+
+inny ar dla kleju stykajacego sie z gs-em (struktura?)
+
+przemieszczenie na skutek roznych wsp rozszerzalnosci przy chlodzeniu detektora
+
+montaz filtru do krawedzi struktury, klejenie bokow
+
+przesluchy optyczne miedzy pikselami -> czernienie blisko powierzchni fotoczulej
+
+
+
